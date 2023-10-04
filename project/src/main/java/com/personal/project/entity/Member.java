@@ -1,9 +1,6 @@
 package com.personal.project.entity;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -33,6 +30,18 @@ public class Member {
     private LocalDateTime joinDate;
     @Column
     private LocalDateTime dueDate;
+
+    @Builder
+    public Member(int cardNum, String name, String gender, String phoneNumber, String product, LocalDateTime joinDate, LocalDateTime dueDate){
+        this.cardNum = cardNum;
+        this.name = name;
+        this.gender = gender;
+        this.phoneNumber = phoneNumber;
+        this.product = product;
+        this.joinDate = joinDate;
+        this.dueDate = dueDate;
+    }
+
 
 
 }
