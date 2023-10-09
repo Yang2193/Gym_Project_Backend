@@ -31,8 +31,11 @@ public class Member {
     @Column
     private LocalDateTime dueDate;
 
+    @Column
+    private String lockerNumber;
+
     @Builder
-    public Member(int cardNum, String name, String gender, String phoneNumber, String product, LocalDateTime joinDate, LocalDateTime dueDate){
+    public Member(int cardNum, String name, String gender, String phoneNumber, String product, LocalDateTime joinDate, LocalDateTime dueDate, String lockerNumber){
         this.cardNum = cardNum;
         this.name = name;
         this.gender = gender;
@@ -40,6 +43,7 @@ public class Member {
         this.product = product;
         this.joinDate = joinDate;
         this.dueDate = dueDate;
+        this.lockerNumber = lockerNumber;
     }
 
 

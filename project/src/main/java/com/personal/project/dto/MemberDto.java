@@ -1,14 +1,14 @@
 package com.personal.project.dto;
 
 import com.personal.project.entity.Member;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class MemberDto {
     private int cardNum; // 카드번호
@@ -18,6 +18,7 @@ public class MemberDto {
     private String product; // 상품명
     private LocalDateTime joinDate; // 가입일자
     private LocalDateTime dueDate; // 만료일자
+    private String lockerNumber;
 
     public Member toMember(){
         return Member.builder()
@@ -28,6 +29,7 @@ public class MemberDto {
                 .product(product)
                 .joinDate(joinDate)
                 .dueDate(dueDate)
+                .lockerNumber(lockerNumber)
                 .build();
     }
 
